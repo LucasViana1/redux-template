@@ -1,19 +1,20 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Header from '../../components/Header';
 import Products from '../../components/Products';
 import Summary from '../../components/Summary';
 import './styles.css';
-import api from '../../utils/api';
+import { productsLoadRequest } from '../../store/modules/products/actions';
 
 const Home = () => {
-  const getProducts = async () => {
-    await api.get('/products');
-  };
+  const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.products);
 
   useEffect(() => {
-    getProducts();
-  }, []);
+    dispatch(productsLoadRequest());
+  }, [dispatch]);
 
+  console.log(products);
   return (
     <main className="home">
       <Header />
