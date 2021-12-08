@@ -1,0 +1,8 @@
+{
+  "products": [
+    { "id": 1, "name": "Cartão" },
+    { "id": 2, "name": "Adesivo" },
+    { "id": 3, "name": "Flyer" },
+    { "id": 4, "name": "Caneca" }
+  ]
+}
