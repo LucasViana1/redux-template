@@ -1,0 +1,10 @@
+.products {
+  margin-left: 2rem;
+  width: calc(50% - 2rem);
+  float: left;
+
+}
+
+.products h2 {
+  margin-bottom: 1rem
+}

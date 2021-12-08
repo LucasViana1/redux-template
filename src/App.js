@@ -1,7 +1,6 @@
-const App = () => (
-  <div className="App">
-    <h1>app</h1>
-  </div>
-);
+import Home from './pages/Home';
+import './global.css';
+
+const App = () => <Home />;
 
 export default App;
