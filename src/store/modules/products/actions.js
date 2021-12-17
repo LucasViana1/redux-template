@@ -1,12 +1,14 @@
+import { PRODUCTS_LOAD_FAILURE, PRODUCTS_LOAD_REQUEST, PRODUCTS_LOAD_SUCCESS } from './types';
+
 export function productsLoadRequest() {
   return {
-    type: '@products/LOAD_REQUEST',
+    type: PRODUCTS_LOAD_REQUEST,
   };
 }
 
 export function productsLoadSuccess(products) {
   return {
-    type: '@products/LOAD_SUCCESS',
+    type: PRODUCTS_LOAD_SUCCESS,
     payload: {
       products,
     },
@@ -15,6 +17,6 @@ export function productsLoadSuccess(products) {
 
 export function productsFailure() {
   return {
-    type: '@products/LOAD_FAILURE',
+    type: PRODUCTS_LOAD_FAILURE,
   };
 }

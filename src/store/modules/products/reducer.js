@@ -1,3 +1,5 @@
+import { PRODUCTS_LOAD_FAILURE, PRODUCTS_LOAD_REQUEST, PRODUCTS_LOAD_SUCCESS } from './types';
+
 const INITIAL_STATE = {
   products: [],
   loading: false,
@@ -5,20 +7,20 @@ const INITIAL_STATE = {
 
 const products = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case '@products/LOAD_REQUEST':
+    case PRODUCTS_LOAD_REQUEST:
       return {
         ...state,
         loading: true,
       };
 
-    case '@products/LOAD_SUCCESS':
+    case PRODUCTS_LOAD_SUCCESS:
       return {
         ...state,
         products: action.payload.products,
         loading: false,
       };
 
-    case '@products/LOAD_FAILURE':
+    case PRODUCTS_LOAD_FAILURE:
       return {
         ...state,
         loading: false,

@@ -1,5 +1,5 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
-
+import { PRODUCTS_LOAD_REQUEST } from './types';
 import api from '../../../utils/api';
 
 import { productsFailure, productsLoadSuccess } from './actions';
@@ -13,4 +13,4 @@ function* getProducts() {
   }
 }
 
-export default all([takeLatest('@products/LOAD_REQUEST', getProducts)]);
+export default all([takeLatest(PRODUCTS_LOAD_REQUEST, getProducts)]);
