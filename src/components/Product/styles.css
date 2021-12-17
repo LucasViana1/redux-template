@@ -1,7 +1,18 @@
 .product {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 0.5rem;
   border: 1px solid black;
   padding: 1rem;
+}
+
+.product * {
+  width: 50%;
+}
+
+.product button {
+  cursor: pointer;
+  height: 2rem;
+  margin: 0 2rem 0 4rem;
 }

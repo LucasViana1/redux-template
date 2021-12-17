@@ -1,4 +1,25 @@
 .summary {
-  width: 50%;
+  margin-left: 4rem;
+  width: calc(50% - 4rem);
   float: left;
+}
+
+.summary ul {
+  margin-top: 1rem;
+  margin-left: 2rem;
+}
+
+.summary ul li {
+  display: flex;
+}
+
+.summary-button {
+  margin-left: 0.5rem;
+}
+
+.summary-button button {
+  margin-right: 0.5rem;
+  padding: 0 6px;
+  border-radius: 2px;
+  cursor: pointer;
 }
