@@ -1,14 +1,14 @@
 import { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { removeToCart, decreaseQuantity, increaseQuantity } from '../../store/modules/cart/actions';
 import PropTypes from 'prop-types';
+import { removeToCart, decreaseQuantity, increaseQuantity } from '../../store/modules/cart/actions';
 import './styles.css';
 
 class Summary extends PureComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     productsInCart: PropTypes.array.isRequired,
-  }
+  };
 
   render() {
     const { dispatch, productsInCart } = this.props;
@@ -50,7 +50,7 @@ class Summary extends PureComponent {
       </aside>
     );
   }
-};
+}
 
 const mapStateToProps = (state) => ({
   productsInCart: state.cart.productsInCart,

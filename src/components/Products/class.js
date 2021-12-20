@@ -1,16 +1,16 @@
 import { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import Product from '../Product';
 import { productsLoadRequest } from '../../store/modules/products/actions';
-import PropTypes from 'prop-types';
 import './styles.css';
 
 class Products extends PureComponent {
   static propTypes = {
     dispatch: PropTypes.func.isRequired,
     products: PropTypes.array.isRequired,
-    loading: PropTypes.bool.isRequired
-  }
+    loading: PropTypes.bool.isRequired,
+  };
 
   componentDidMount() {
     const { dispatch } = this.props;
@@ -28,7 +28,7 @@ class Products extends PureComponent {
       </section>
     );
   }
-};
+}
 
 const mapStateToProps = (state) => ({
   products: state.products.products,

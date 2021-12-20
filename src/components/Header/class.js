@@ -1,15 +1,15 @@
-import { Component } from 'react';
+import { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import './styles.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-class Header extends Component {
+class Header extends PureComponent {
   static propTypes = {
-    productsInCart: PropTypes.array.isRequired
-  }
+    productsInCart: PropTypes.array.isRequired,
+  };
 
   render() {
-    const {productsInCart} = this.props;
+    const { productsInCart } = this.props;
     const total = productsInCart.reduce((acc, product) => acc + product.quantity, 0);
 
     return (
@@ -18,8 +18,7 @@ class Header extends Component {
       </header>
     );
   }
-
-};
+}
 
 const mapStateToProps = (state) => ({
   productsInCart: state.cart.productsInCart,
