@@ -11,17 +11,24 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `yarn test`
+## Redux
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+As dependências básicas costuma ser: redux, react-redux e redux-saga
 
-### `yarn build`
+Tudo relacionado a configuração do redux é salvo na pasta `store` (store é o state global)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+o Provider deve ser configurado em volta do componente principal
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Estrutura de pastas e arquivos:
+* modules: pasta que fica salvo cada serviço configurado para uso do Redux
+* products: é um exemplo de serviço utilizando Redux (dentro da pasta modules), nele existem 4 arquivos:
+  * actions: funções que disparam ações, para alteração do estado na store
+  * reducer: define o que será será alterado no estado global da store através de cada action
+  * sagas: middleware que realiza side effects quando determinadas actions são disparadas
+  * types: constantes para padronizar os nomes utilizados no reducer, action e saga.
+* rootSaga: engloba todas as requisições usando saga dos módulos
+* rootReducer: engloba todos os reducers dos módulos
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Cada componente pode:
+* Fazer a leitura dos dados na store
+* Enviar ações para alterar a store
